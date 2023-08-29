@@ -1,18 +1,20 @@
 const form = document.getElementById('Form');
 const qrCode = document.getElementById('qr-code');
 const formData = document.getElementById('formData');
-const error = document.getElementById('error')
+const error = document.getElementById('error');
+const wInput = document.getElementById('w');
+const hInput = document.getElementById('h');
 
 
-const generateQrCode = (url) =>{
+const generateQrCode = (url, w, h) =>{
     //Clean the wrapper
     qrCode.innerHTML = '';
     
     //Generate QrCode
     const qr = new QRCode(document.getElementById('qr-code'), {
         text: url,
-        width: 300,
-        height: 300
+        width: w,
+        height: h
     })
 }
 
@@ -27,8 +29,17 @@ const generateSubmit = (e)=>{
     } else {
         error.classList.add('d-none');
         
+        //Set QRCode sizes
+        let w = 300;
+        let h = 300;
+
+        if(wInput.value.length > 0 && hInput.value.length > 0){
+            w = wInput.value;
+            h = hInput.value;
+        }
+
         //Generate qr code
-        generateQrCode(url);
+        generateQrCode(url, w, h);
     }
 }
 

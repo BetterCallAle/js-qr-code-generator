@@ -27,12 +27,12 @@
   text-align: center;
 }
 
+input{
+  color: rgb(26, 26, 26) !important;
+}
+
 .d-none{
   display: none !important;
 }
 
-@media screen and (max-width: 414px) {
-  #Generate {
-    height: 400px;
-  }
-}
+
