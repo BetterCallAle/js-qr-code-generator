@@ -1,6 +1,7 @@
 const form = document.getElementById('Form');
 const qrCode = document.getElementById('qr-code');
 const formData = document.getElementById('formData');
+const error = document.getElementById('error')
 
 
 const generateQrCode = (url) =>{
@@ -21,9 +22,14 @@ const generateSubmit = (e)=>{
     console.log(url);
 
     //CHECK ON THE VALUES
-
-    //Generate qr code
-    generateQrCode(url);
+    if(url.length <= 0){
+        error.classList.remove('d-none')
+    } else {
+        error.classList.add('d-none');
+        
+        //Generate qr code
+        generateQrCode(url);
+    }
 }
 
 

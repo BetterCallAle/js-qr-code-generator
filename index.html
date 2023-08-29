@@ -1,74 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generatore Codice QR</title>
+    <link rel="stylesheet" href="style.css" />
     <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,100;1,9..144,900&family=Outfit:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet"/>
-</head>
-<body>
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,700;1,400&family=Fira+Code:wght@500;700&family=Fraunces:ital,opsz,wght@0,9..144,100;1,9..144,900&family=Outfit:wght@400;700&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <main>
-        <div
-          class="flex flex-col-reverse align-center justify-content m-auto md:max-w-4xl md:flex-row mt-24 p-10"
-        >
-          <div id="Generate" class="w-full md:w-2/3 mr-24">
-            <h1 class="text-3xl font-bold mb-4 md:text-4xl text-center">
-              QR Code Generator
-            </h1>
-            <p class="mt-7">Enter your Url to generate your QR code</p>
-  
-  
-            <form id="Form" class="mt-4">
-              <input
-                id="formData"
-                type="text"
-                placeholder="Enter your url"
-                class="mr-3 focus:outline-none mb-5 rounded p-4 w-full border-2 border-gray-200"
-              />
-  
-  
-              <button
-                id="button"
-                class="bg-gray-600 rounded-md p-4 w-full text-white"
-              >
-                Generate your QR code
-              </button>
-            </form>
-          </div>
-          <div class="w-full md:w-1/3 self-center">
-            <img
-              src="Turing logo2.png"
-              class="-mt-20 m-auto md:align-center"
-              alt="Turing logo"
+      <div
+        class="flex flex-col-reverse align-center justify-content m-auto md:max-w-4xl md:flex-row mt-24 p-10"
+      >
+        <div id="Generate" class="w-full md:w-3/3 mr-24">
+          <h1 class="text-3xl font-bold mb-4 md:text-4xl text-center">
+            Generatore codice QR
+          </h1>
+          <p class="mt-7">Inserisci l'url per generare il tuo codice QR</p>
+
+          <form id="Form" class="mt-4">
+            <input
+              id="formData"
+              type="text"
+              placeholder="Inserisci URL"
+              class="mr-3 focus:outline-none mb-5 rounded p-4 w-full border-2 border-gray-200"
             />
-          </div>
+
+            <small class="d-none" id="error">Inserisci un url</small>
+
+            <button id="button" class="rounded-md p-4 w-full text-white">
+              Genera il tuo codice QR
+            </button>
+          </form>
         </div>
-        <!-- Where the generated QR code will be. -->
-        <div id="qr-code" class="m-auto"></div>
-      </main>
+      </div>
+      <!-- Where the generated QR code will be. -->
+      <div id="qr-code" class="m-auto"></div>
+    </main>
 
     <script src="main.js"></script>
     <!-- TAILWIND -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Poppins', 'monospace'],
-                        screens: {
-                            sm: '480px',
-                            md: '768px',
-                            lg: '976px',
-                            xl: '1440px'
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "monospace"],
+              screens: {
+                sm: "480px",
+                md: "768px",
+                lg: "976px",
+                xl: "1440px",
+              },
+            },
+          },
+        },
+      };
     </script>
 
     <!-- QRCode.js -->
@@ -78,5 +70,5 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-</body>
+  </body>
 </html>
